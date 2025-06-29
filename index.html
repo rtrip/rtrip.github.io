@@ -392,7 +392,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mainContent = document.getElementById('main-content');
-            const pageLinks = document.querySelectorAll('.page-link');
             const navLinks = document.querySelectorAll('header .nav-link');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -430,13 +429,15 @@
                 if (page === 'services') attachUniversityResearchListener();
             }
             
-            pageLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
+            // --- FIX: Use Event Delegation for all page links ---
+            document.body.addEventListener('click', (e) => {
+                const link = e.target.closest('.page-link');
+                if (link) {
                     e.preventDefault();
                     const page = link.getAttribute('href').substring(1);
                     navigateTo(page);
                     window.scrollTo(0, 0);
-                });
+                }
             });
 
             mobileMenuButton.addEventListener('click', () => {
