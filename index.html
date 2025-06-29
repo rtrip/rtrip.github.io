@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Admissions: The Dean's Advantage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-color: #1a202c;
+            /* Replaced placeholder with a real university image */
+            background-image: linear-gradient(rgba(26, 32, 44, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .active-nav {
+            color: #FBBF24; /* Amber 400 */
+            font-weight: 600;
+        }
+        .nav-link {
+            color: #E2E8F0; /* Slate 200 */
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #FBBF24;
+        }
+        /* Spinner for loading state */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ca8a04; /* yellow-600 */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- App Container -->
+    <div id="app-container" class="max-w-7xl mx-auto bg-white shadow-lg">
+
+        <!-- Header -->
+        <header class="bg-gray-800 text-white sticky top-0 z-50 shadow-md">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#home" class="text-xl md:text-2xl font-bold font-serif text-white tracking-wider page-link">ELITE <span class="text-amber-400">ADMISSIONS</span></a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link active-nav page-link">Home</a>
+                    <a href="#about" class="nav-link page-link">About</a>
+                    <a href="#services" class="nav-link page-link">Services</a>
+                    <a href="#ai-tools" class="nav-link page-link">✨ AI Tools</a>
+                    <a href="#contact" class="nav-link page-link">Contact</a>
+                </div>
+                <a href="#contact" class="hidden md:inline-block bg-amber-400 text-gray-900 font-bold py-2 px-5 rounded-lg hover:bg-amber-500 transition-colors duration-300 page-link">
+                    Free Consultation
+                </a>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+                <a href="#home" class="block py-2 text-white page-link">Home</a>
+                <a href="#about" class="block py-2 text-white page-link">About</a>
+                <a href="#services" class="block py-2 text-white page-link">Services</a>
+                <a href="#ai-tools" class="block py-2 text-white page-link">✨ AI Tools</a>
+                <a href="#contact" class="block py-2 text-white page-link">Contact</a>
+                <a href="#contact" class="mt-2 block bg-amber-400 text-gray-900 font-bold py-2 px-5 rounded-lg text-center page-link">
+                    Free Consultation
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- All page content will be injected here -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-300 py-12 px-6">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold font-serif text-white mb-4">ELITE <span class="text-amber-400">ADMISSIONS</span></h3>
+                    <p class="text-gray-400">Gain the Dean's Advantage for your university application.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" class="hover:text-amber-400 transition-colors page-link">Home</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors mt-2 block page-link">About The Dean</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors mt-2 block page-link">Our Services</a></li>
+                        <li><a href="#ai-tools" class="hover:text-amber-400 transition-colors mt-2 block page-link">✨ AI Tools</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400 transition-colors mt-2 block page-link">Get Your Free Consult</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contact Us</h4>
+                    <p>Serving students globally.</p>
+                    <p class="mt-2">📧 <a href="mailto:consult@eliteadmissions.com" class="hover:text-amber-400">consult@eliteadmissions.com</a></p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="year"></span> Elite Admissions. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Page Templates -->
+    <template id="home-page">
+        <div>
+            <!-- Hero Section -->
+            <section class="hero-bg text-white">
+                <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold font-serif mb-4">Unlock Your Potential. Gain the Dean's Advantage.</h1>
+                    <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-200">
+                        We specialize in guiding ambitious students into the world's most competitive STEM & Business programs with a 100% success rate.
+                    </p>
+                    <a href="#contact" class="bg-amber-400 text-gray-900 font-extrabold py-4 px-8 rounded-lg text-lg hover:bg-amber-500 transition-colors duration-300 page-link">Schedule Your Free Consultation</a>
+                </div>
+            </section>
+
+            <!-- Success Bar Section -->
+            <section class="bg-gray-100 py-8">
+                <div class="container mx-auto px-6">
+                    <h3 class="text-center text-gray-500 font-semibold text-sm uppercase tracking-widest mb-4">Securing Placements at World-Class Universities</h3>
+                    <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+                        <span class="font-bold text-gray-600">Caltech</span>
+                        <span class="font-bold text-gray-600">Carnegie Mellon</span>
+                        <span class="font-bold text-gray-600">U.C. Berkeley</span>
+                        <span class="font-bold text-gray-600">UChicago</span>
+                        <span class="font-bold text-gray-600">UT Austin</span>
+                        <span class="font-bold text-gray-600">UCLA</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Promise Section -->
+            <section class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                         <!-- Replaced placeholder with a real image -->
+                         <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=600&h=400&auto=format&fit=crop&crop=faces" 
+                              alt="A professional admissions consultant" 
+                              class="rounded-lg shadow-xl"
+                              onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">Our Unmatched Promise: You Work Directly with a Dean.</h2>
+                        <p class="text-lg mb-4 text-gray-600">
+                            Forget "teams" of contract writers and junior counselors. At Elite Admissions, your guide is an Associate Dean and Endowed Chair Professor from a top-tier US university. 
+                        </p>
+                        <p class="text-lg text-gray-600">
+                           You receive unparalleled, one-on-one mentorship from an insider who knows exactly what elite universities are looking for.
+                        </p>
+                        <a href="#about" class="mt-6 inline-block text-amber-600 font-bold hover:text-amber-700 page-link">Learn More About Your Mentor →</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- How I Can Help Section -->
+            <section class="py-16 md:py-24 bg-gray-50">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold font-serif mb-12">How We Pave Your Path to Success</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold font-serif mb-2">🎯 Strategy Sessions</h3>
+                            <p class="text-gray-600">Building a unique application narrative that highlights your strengths and ambitions.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold font-serif mb-2">✍️ Essay Coaching</h3>
+                            <p class="text-gray-600">Crafting compelling essays and personal statements that resonate with admissions committees.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold font-serif mb-2">📁 Application Packages</h3>
+                            <p class="text-gray-600">Meticulous, end-to-end guidance to ensure every detail of your application is flawless.</p>
+                        </div>
+                    </div>
+                    <a href="#services" class="mt-12 inline-block bg-gray-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-900 transition-colors duration-300 page-link">View All Services</a>
+                </div>
+            </section>
+        </div>
+    </template>
+    
+    <template id="about-page">
+        <div class="py-16 md:py-24 px-6">
+            <div class="container mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold font-serif text-center mb-12">An Insider at the Highest Level of Academia</h1>
+                <div class="grid md:grid-cols-5 gap-12 items-start">
+                    <div class="md:col-span-2">
+                        <!-- Replaced placeholder with a real image -->
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=500&h=600&auto=format&fit=crop&crop=top" 
+                             alt="Portrait of the founder of Elite Admissions" 
+                             class="rounded-lg shadow-2xl mx-auto"
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x600/1a202c/ffffff?text=Image+Not+Found';">
+                    </div>
+                    <div class="md:col-span-3">
+                        <p class="text-lg text-gray-600 mb-6">
+                            Your admissions journey will be personally guided by an academic leader with over 25 years of experience at the forefront of US higher education. His credentials are not just in consulting; they are in the academic world your child aims to enter.
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold font-serif mb-4">Credentials & Experience</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start"><span class="text-amber-500 mr-3 mt-1">✓</span><span><strong>Associate Dean & Endowed Chair Professor</strong> at a top-tier US University.</span></li>
+                                <li class="flex items-start"><span class="text-amber-500 mr-3 mt-1">✓</span><span><strong>Recognized International Scholar</strong> with extensive experience in academic publishing.</span></li>
+                                <li class="flex items-start"><span class="text-amber-500 mr-3 mt-1">✓</span><span><strong>Proven Strategist</strong> with unparalleled success in placing students into elite universities.</span></li>
+                                <li class="flex items-start"><span class="text-amber-500 mr-3 mt-1">✓</span><span><strong>Trusted Recommender</strong> who has written countless successful recommendation letters.</span></li>
+                            </ul>
+                        </div>
+                         <div class="mt-8">
+                            <h3 class="text-2xl font-bold font-serif mb-4">A Legacy of Success</h3>
+                             <p class="text-lg text-gray-600">
+                                The strategies employed at Elite Admissions are not theoretical. The founder first proved their effectiveness by coaching his own sons and their peers, securing offers for Computer Science and STEM from institutions including: Caltech, Carnegie Mellon, U.C. Berkeley, UChicago, and more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="services-page">
+        <div class="py-16 md:py-24 px-6 bg-gray-50">
+            <div class="container mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold font-serif text-center mb-4">Our Comprehensive, White-Glove Service</h1>
+                <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">We guide you through every single step of the complex admissions process. Our service is designed to be all-inclusive, ensuring no detail is overlooked.</p>
+                
+                <!-- AI UNIVERSITY RESEARCHER TOOL -->
+                <div class="my-16 p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h2 class="text-2xl md:text-3xl font-bold font-serif text-center mb-2">✨ University Research Helper</h2>
+                    <p class="text-gray-600 text-center mb-6">Get an insider's look at top universities. Enter a university name below.</p>
+                    <form id="university-research-form" class="max-w-xl mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <input type="text" id="university-name" placeholder="e.g., Carnegie Mellon University" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                            <button type="submit" id="university-research-button" class="bg-gray-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-900 transition-colors duration-300 flex items-center justify-center">
+                                Get Insights
+                            </button>
+                        </div>
+                    </form>
+                    <div id="university-research-output" class="mt-6 text-gray-700 bg-gray-50 p-6 rounded-lg border border-gray-200" style="display: none;"></div>
+                </div>
+
+
+                <div class="space-y-12">
+                    <!-- Phases 1-4... -->
+                    <!-- Phase 1 -->
+                    <div>
+                        <h2 class="text-2xl font-bold font-serif mb-6 border-l-4 border-amber-400 pl-4">Phase 1: Strategy & Foundation Building</h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white p-6 rounded-lg border">1. <strong>Personalized Profile Assessment:</strong> We dive deep into your academic background, extracurriculars, and career goals to build a unique application narrative.</div>
+                            <div class="bg-white p-6 rounded-lg border">2. <strong>Strategic University & Program Selection:</strong> We leverage insider knowledge to identify "best-fit" schools that align with your ambitions.</div>
+                            <div class="bg-white p-6 rounded-lg border">3. <strong>Standardized Test Strategy:</strong> We provide resources and guidance for the SAT, ACT, TOEFL, and other required exams.</div>
+                        </div>
+                    </div>
+                    <!-- Phase 2 -->
+                    <div>
+                        <h2 class="text-2xl font-bold font-serif mb-6 border-l-4 border-amber-400 pl-4">Phase 2: Application & Portfolio Execution</h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white p-6 rounded-lg border">4. <strong>Application Masterclass:</strong> We provide meticulous, hands-on assistance with every form and detail.</div>
+                            <div class="bg-white p-6 rounded-lg border">5. <strong>Compelling Narrative Crafting:</strong> We offer expert coaching for personal statements and essays to make your story stand out.</div>
+                            <div class="bg-white p-6 rounded-lg border">6. <strong>Portfolio & Resume Development:</strong> We help you build a powerful resume/CV and prepare specialized portfolios.</div>
+                        </div>
+                    </div>
+                    <!-- Phase 3 -->
+                    <div>
+                        <h2 class="text-2xl font-bold font-serif mb-6 border-l-4 border-amber-400 pl-4">Phase 3: Securing Your Place</h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white p-6 rounded-lg border">7. <strong>Scholarship & Financial Aid Guidance:</strong> We help you identify and apply for funding opportunities.</div>
+                            <div class="bg-white p-6 rounded-lg border">8. <strong>Credential Evaluation & Visa Support:</strong> We navigate the complexities of applications for international students.</div>
+                            <div class="bg-white p-6 rounded-lg border">9. <strong>Interview Preparation:</strong> We conduct mock interviews to build your confidence and polish your performance.</div>
+                        </div>
+                    </div>
+                    <!-- Phase 4 -->
+                     <div>
+                        <h2 class="text-2xl font-bold font-serif mb-6 border-l-4 border-amber-400 pl-4">Phase 4: From Acceptance to Arrival</h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white p-6 rounded-lg border">10. <strong>Pre-Departure & Arrival Support:</strong> We offer orientations on cultural adaptation, travel, and accommodation.</div>
+                            <div class="bg-white p-6 rounded-lg border">11. <strong>Post-Arrival Advising:</strong> Our support continues after you arrive, assisting with course registration.</div>
+                            <div class="bg-white p-6 rounded-lg border">12. <strong>Long-Term Career Counseling:</strong> We provide guidance on internships and career planning to maximize your degree's value.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="ai-tools-page">
+        <div class="py-16 md:py-24 px-6 bg-white">
+            <div class="container mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold font-serif text-center mb-4">✨ AI-Powered Admission Tools</h1>
+                <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">Get a glimpse of the Dean's Advantage. Use our custom-built AI tools to jumpstart your application strategy.</p>
+                
+                <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
+                    <h2 class="text-2xl md:text-3xl font-bold font-serif text-center mb-2">Essay Idea Generator</h2>
+                    <p class="text-gray-600 text-center mb-6">Stuck on your personal statement? Enter an essay prompt and some notes about yourself to get unique, strategic ideas from our AI Dean.</p>
+                    
+                    <form id="essay-generator-form">
+                        <div class="mb-4">
+                            <label for="essay-prompt" class="block text-gray-700 font-medium mb-1">College Essay Prompt</label>
+                            <textarea id="essay-prompt" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="Paste the essay prompt here. For example, the Common App prompt: 'Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.'" required></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <label for="student-details" class="block text-gray-700 font-medium mb-1">Your Interests & Experiences</label>
+                            <textarea id="student-details" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="Tell us a bit about you. What are your passions, hobbies, or significant experiences? (e.g., 'Captain of the robotics team, volunteer at an animal shelter, love sci-fi novels, worked a summer job at a cafe, interested in AI and ethics.')" required></textarea>
+                        </div>
+
+                        <button type="submit" id="essay-generator-button" class="w-full bg-amber-400 text-gray-900 font-extrabold py-3 px-6 rounded-lg hover:bg-amber-500 transition-colors duration-300 flex items-center justify-center gap-2">
+                           ✨ Generate Essay Ideas
+                        </button>
+                    </form>
+                    <div id="essay-generator-output" class="mt-6 text-gray-700" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="contact-page">
+        <!-- ... (Contact page content remains the same) ... -->
+        <div class="py-16 md:py-24 px-6">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold font-serif mb-4">Start Your Journey Today</h1>
+                        <p class="text-lg text-gray-600 mb-6">Take the first step towards securing your place at an elite university. Fill out the form to schedule your complimentary 20-minute video consultation directly with our Dean.</p>
+                        <div id="form-success-message" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative" role="alert">
+                           <strong class="font-bold">Thank you!</strong>
+                           <span class="block sm:inline">Your request has been sent. We will reach out shortly.</span>
+                        </div>
+                    </div>
+                    <div id="contact-form-container" class="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
+                        <form id="consultation-form">
+                           <h3 class="text-2xl font-bold mb-6 text-center">Free 20-Minute Consultation</h3>
+                            <!-- Student Info -->
+                            <h4 class="font-semibold text-gray-700 mb-3 border-b pb-2">About the Student</h4>
+                            <div class="mb-4">
+                                <label for="student-name" class="block text-gray-700 font-medium mb-1">Student Name (First, Last)</label>
+                                <input type="text" id="student-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="student-email" class="block text-gray-700 font-medium mb-1">Student Email</label>
+                                <input type="email" id="student-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="grade" class="block text-gray-700 font-medium mb-1">Current Grade</label>
+                                    <input type="text" id="grade" placeholder="e.g., 11th Grade" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
+                                </div>
+                                <div>
+                                    <label for="entry-year" class="block text-gray-700 font-medium mb-1">Target Entry Year</label>
+                                    <input type="text" id="entry-year" placeholder="e.g., 2026" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
+                                </div>
+                            </div>
+
+                            <!-- Parent Info -->
+                            <h4 class="font-semibold text-gray-700 mt-6 mb-3 border-b pb-2">About the Parent</h4>
+                             <div class="mb-4">
+                                <label for="parent-name" class="block text-gray-700 font-medium mb-1">Parent Name (First, Last)</label>
+                                <input type="text" id="parent-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="parent-email" class="block text-gray-700 font-medium mb-1">Parent Email</label>
+                                <input type="email" id="parent-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                            </div>
+
+                             <!-- Primary Concern -->
+                             <div class="mb-6">
+                                <label for="concern" class="block text-gray-700 font-medium mb-1">Primary Concern or Question (Optional)</label>
+                                <textarea id="concern" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
+                             </div>
+
+                            <button type="submit" class="w-full bg-amber-400 text-gray-900 font-extrabold py-3 px-6 rounded-lg hover:bg-amber-500 transition-colors duration-300">Request My Free Consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainContent = document.getElementById('main-content');
+            const pageLinks = document.querySelectorAll('.page-link');
+            const navLinks = document.querySelectorAll('header .nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // --- Basic SPA Router ---
+            const pages = {
+                home: document.getElementById('home-page').innerHTML,
+                about: document.getElementById('about-page').innerHTML,
+                services: document.getElementById('services-page').innerHTML,
+                'ai-tools': document.getElementById('ai-tools-page').innerHTML,
+                contact: document.getElementById('contact-page').innerHTML,
+            };
+
+            function navigateTo(page) {
+                if (!pages[page]) {
+                    page = 'home'; // Default to home if page not found
+                }
+                mainContent.innerHTML = pages[page];
+                window.location.hash = page;
+
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active-nav');
+                    if (link.getAttribute('href') === `#${page}`) {
+                        link.classList.add('active-nav');
+                    }
+                });
+
+                // Close mobile menu after navigation
+                mobileMenu.classList.add('hidden');
+                
+                // Add event listeners for the specific page
+                if (page === 'contact') attachFormListener();
+                if (page === 'ai-tools') attachEssayGeneratorListener();
+                if (page === 'services') attachUniversityResearchListener();
+            }
+            
+            pageLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const page = link.getAttribute('href').substring(1);
+                    navigateTo(page);
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // --- Gemini API Call Helper ---
+            async function callGeminiAPI(prompt) {
+                // IMPORTANT: In a real application, the API key should be handled securely
+                // on a backend server, not exposed in the frontend.
+                // For this prototype, we'll leave it blank as per instructions.
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        console.error("Unexpected API response structure:", result);
+                        return "Sorry, I couldn't generate a response. The API returned an unexpected result.";
+                    }
+                } catch (error) {
+                    console.error("Error calling Gemini API:", error);
+                    return `An error occurred: ${error.message}. Please check the console for details.`;
+                }
+            }
+            
+            // --- AI Tool: Essay Generator ---
+            function attachEssayGeneratorListener() {
+                const form = document.getElementById('essay-generator-form');
+                if (form) {
+                    form.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const button = document.getElementById('essay-generator-button');
+                        const outputDiv = document.getElementById('essay-generator-output');
+                        const essayPrompt = document.getElementById('essay-prompt').value;
+                        const studentDetails = document.getElementById('student-details').value;
+
+                        // Show loading state
+                        button.disabled = true;
+                        button.innerHTML = '<div class="loader"></div><span class="ml-2">Generating...</span>';
+                        outputDiv.style.display = 'block';
+                        outputDiv.innerHTML = '<p class="text-center">Brewing some ideas... please wait.</p>';
+
+                        const fullPrompt = `You are an expert college admissions advisor, a Dean at a top US university. A student has provided an essay prompt and some personal details. Generate 3 unique and compelling essay ideas or angles for them. Be encouraging and strategic in your tone. For each idea, provide a catchy title, a core concept, and a few key points to explore. Format the response in clear, readable HTML with headings and lists. Student's essay prompt: "${essayPrompt}". Student's personal details: "${studentDetails}".`;
+
+                        const responseText = await callGeminiAPI(fullPrompt);
+                        
+                        // Display result
+                        outputDiv.innerHTML = responseText.replace(/\n/g, '<br>'); // Basic formatting
+
+                        // Restore button
+                        button.disabled = false;
+                        button.innerHTML = '✨ Generate Essay Ideas';
+                    });
+                }
+            }
+            
+            // --- AI Tool: University Research Helper ---
+            function attachUniversityResearchListener() {
+                const form = document.getElementById('university-research-form');
+                if (form) {
+                    form.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const button = document.getElementById('university-research-button');
+                        const outputDiv = document.getElementById('university-research-output');
+                        const universityName = document.getElementById('university-name').value;
+
+                        // Show loading state
+                        button.disabled = true;
+                        button.innerHTML = '<div class="loader"></div>';
+                        outputDiv.style.display = 'block';
+                        outputDiv.innerHTML = '<p class="text-center">Researching... please wait.</p>';
+
+                        const fullPrompt = `You are an expert college admissions advisor, a Dean at a top US university. Provide a brief, insightful summary of "${universityName}" for a prospective STEM applicant. Cover its key strengths in Computer Science/Engineering, its campus culture, and one insider admissions tip. Be concise and authoritative. Format the response in clear, readable HTML with a main heading for the university name and subheadings for each section.`;
+
+                        const responseText = await callGeminiAPI(fullPrompt);
+
+                        // Display result
+                        outputDiv.innerHTML = responseText.replace(/\n/g, '<br>');
+
+                        // Restore button
+                        button.disabled = false;
+                        button.innerHTML = 'Get Insights';
+                    });
+                }
+            }
+
+            // --- Contact Form Submission ---
+            function attachFormListener() {
+                const form = document.getElementById('consultation-form');
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const formContainer = document.getElementById('contact-form-container');
+                        const successMessage = document.getElementById('form-success-message');
+                        
+                        formContainer.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                    });
+                }
+            }
+
+
+            // --- Initial Page Load ---
+            const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
+            navigateTo(initialPage);
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
+
