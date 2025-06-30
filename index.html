@@ -385,7 +385,7 @@
         <div class="py-16 md:py-24 px-6 bg-white">
             <div class="container mx-auto max-w-4xl">
                 <h1 class="text-4xl md:text-5xl font-bold font-serif text-center mb-4">Elite Admissions: Questions for Your Counselor</h1>
-                <p class="text-lg text-gray-600 text-center mb-10">To make the most of your consultation with Elite Admissions, we encourage you to think what questions will best help you decide if this is the right admissions help for you. To help you, here are some topics designed to help tailor the guidance you receive to your unique goals, strengths, and challenges. However, you are welcome to choose your own questions. If you are planning to attend a top University, you probably have your list of questions anyway.</p>
+                <p class="text-lg text-gray-600 text-center mb-10">To make the most of your consultation with Elite Admissions, we encourage you to think what questions will best help you decide if this is the right admissions counselor for you. Here are some topics designed to help tailor the guidance you receive to your unique goals, strengths, and challenges. However, you are welcome to choose your own questions. If you are planning to attend a top University, you probably have your list of questions anyway.</p>
                 <ul class="space-y-4 text-lg text-gray-700">
                     <li class="p-4 bg-gray-50 rounded-lg border border-gray-200">How will Elite Admissions tailor a strategy for my profile and goals?</li>
                     <li class="p-4 bg-gray-50 rounded-lg border border-gray-200">Can you share examples of students you’ve helped and where they got admitted?</li>
@@ -504,7 +504,7 @@
                         outputDiv.style.display = 'block';
                         outputDiv.innerHTML = '<p class="text-center">Brewing some ideas... please wait.</p>';
 
-                        const fullPrompt = `You are an expert college admissions advisor...`; // Prompt remains the same
+                        const fullPrompt = `You are an expert college admissions advisor, a Dean at a top US university. A student has provided an essay prompt and some personal details. Generate 3 unique and compelling essay ideas or angles for them. Be encouraging and strategic in your tone. For each idea, provide a catchy title, a core concept, and a few key points to explore. Format the response in clear, readable HTML with headings and lists. Student's essay prompt: "${essayPrompt}". Student's personal details: "${studentDetails}".`;
                         const responseText = await callGeminiAPI(fullPrompt);
                         
                         outputDiv.innerHTML = responseText.replace(/\n/g, '<br>');
@@ -529,7 +529,7 @@
                         outputDiv.style.display = 'block';
                         outputDiv.innerHTML = '<p class="text-center">Researching... please wait.</p>';
 
-                        const fullPrompt = `You are an expert college admissions advisor...`; // Prompt remains the same
+                        const fullPrompt = `You are an expert college admissions advisor, a Dean at a top US university. Provide a brief, insightful summary of "${universityName}" for a prospective STEM applicant. Cover its key strengths in Computer Science/Engineering, its campus culture, and one insider admissions tip. Be concise and authoritative. Format the response in clear, readable HTML with a main heading for the university name and subheadings for each section.`;
                         const responseText = await callGeminiAPI(fullPrompt);
 
                         outputDiv.innerHTML = responseText.replace(/\n/g, '<br>');
